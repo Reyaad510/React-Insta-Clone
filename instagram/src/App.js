@@ -22,7 +22,7 @@ class App extends Component {
           {this.state.dummyData.map(data => {
             return <PostContainer data={data} key={data.username} />
           })}
-        <CommentSection />
+        
        </div>
       </div>
     );
