@@ -1,0 +1,56 @@
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+   
+   
+
+}
+
+.search-left {
+
+    border-right: 1px solid lightgray;
+    flex: 1 1 3%;
+    cursor: pointer;
+    
+}
+
+.instagram {
+    flex: 1 1 25%;
+    font-size: 16px;
+    
+    padding-left: 10px;
+    
+}
+
+.instagram p {
+    font-size: 40px;
+    font-family: 'Cookie', cursive;
+}
+
+
+.search-mid {
+    flex: 1 1 25%;
+   
+}
+
+.search-mid input {
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+}
+
+.search-mid ::placeholder {
+    padding-left: 27%;
+    color: gray;
+}
+
+.search-right {
+    display:flex;
+    justify-content: flex-end;
+    flex: 1 1 25%;
+   
+   
+    
+}
