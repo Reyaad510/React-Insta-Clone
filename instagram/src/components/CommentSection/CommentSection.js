@@ -7,7 +7,7 @@ const CommentSection = props => {
     return (
         <div>
           {props.comments.map(comment => {
-              return <Comment comment={comment} />
+              return <Comment comment={comment} key={comment.text} />
           })}
           <div className="comment-input-box">
         <input className="comment-input" placeholder="Add Comment..."/>

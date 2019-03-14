@@ -7,10 +7,10 @@ const PostContainer = props => {
     return (
         <div className="post">
             <div className='top-post'>
-                <img className="imgUrl" src={props.data.thumbnailUrl} />
+                <img className="imgUrl" src={props.data.thumbnailUrl} alt='img1' />
                 <p className='bold'>{props.data.username}</p>
             </div>
-            <img className="mid-img" src={props.data.imageUrl} />
+            <img className="mid-img" src={props.data.imageUrl} alt='img2' />
     
             <div className='like-comment-symbols'>
                 <p><i class="far fa-heart fa-lg"></i></p>

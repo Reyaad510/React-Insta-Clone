@@ -1,5 +1,6 @@
 import React from 'react';
 import './Comment.css';
+import PropTypes from 'prop-types';
 
 const Comment = props => {
    
@@ -11,3 +12,12 @@ const Comment = props => {
 }
 
 export default Comment;
+
+Comment.propTypes = {
+    dummyData: PropTypes.arrayOf(
+        PropTypes.shape({
+            username: PropTypes.string,
+            likes: PropTypes.number,
+        })
+    )
+}
