@@ -1,0 +1,51 @@
+
+.post {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    margin-bottom: 100px;
+}
+
+.top-post {
+    display:flex;
+    align-items: center;
+    padding: 13px;
+}
+
+.imgUrl {
+    border-radius: 100%;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.mid-img {
+    width: 100%;
+}
+
+.like-comment-symbols {
+    display: flex;
+    height: 28px;
+  
+    
+}
+
+i {
+    padding-left: 15px;
+    
+}
+
+.likes {
+    padding-left: 15px;
+    
+    
+   
+}
+
+
+
+
+

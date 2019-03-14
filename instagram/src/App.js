@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import PostContainer from './components/PostContainer/PostContainer';
 import CommentSection from './components/CommentSection/CommentSection';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -18,7 +19,9 @@ class App extends Component {
       <div className="App">
         <div className= "container">
         <SearchBar />
-        <PostContainer />
+          {this.state.dummyData.map(data => {
+            return <PostContainer data={data} key={data.username} />
+          })}
         <CommentSection />
        </div>
       </div>
