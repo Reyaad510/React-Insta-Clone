@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Comment from '../Comment.js/Comment';
 import './CommentSection.css'
 
-const CommentSection = props => {
+class CommentSection extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: props.comments
+        }
+    }
 
-    return (
-        <div>
-          {props.comments.map(comment => {
-              return <Comment comment={comment} key={comment.text} />
-          })}
-          <div className="comment-input-box">
-        <input className="comment-input" placeholder="Add Comment..."/>
-        </div>
-        </div>
-    );
+    render() {
+        return (
+            <div>
+                {this.state.comments.map(comment => {
+                    return <Comment comment={comment} key={comment.text} />
+                })}
+                 <div className='comment-input-box'>
+                    <input className='comment-input' placeholder="Add Comment..." />
+                    </div>
+            </div>
+        );
+
+  }
 }
 
 export default CommentSection;
