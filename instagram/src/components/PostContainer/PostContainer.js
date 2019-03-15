@@ -13,7 +13,7 @@ class PostContainer extends Component {
   }
 
 
-  addLikes = () => {
+  toggleLikes = () => {
     if(!this.state.updated) {
       this.setState(prevState => {
         return {
