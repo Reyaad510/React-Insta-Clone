@@ -15,6 +15,20 @@ class CommentSection extends Component {
       this.setState({ text: event.target.value })
   }
 
+  addNewComment = (event,index) => {
+      event.preventDefault();
+      this.setState(prevState => {
+          return {
+              comments: [...prevState.comments,
+              {
+                 text: prevState.text,
+                 username: 'Reyaad_Rafeek' 
+              }],
+              text: ''
+          }
+      })
+  }
+
  
 
   render() {
@@ -23,7 +37,7 @@ class CommentSection extends Component {
         {this.state.comments.map(comment => {
           return <Comment comment={comment} key={comment.text} />;
         })}
-        <form className="comment-input-box">
+        <form onSubmit={this.addNewComment} className="comment-input-box">
           <input 
           className="comment-input" 
           placeholder="Add Comment..."
