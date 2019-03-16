@@ -1,7 +1,7 @@
 import React from "react";
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   return (
     <div className="search-bar">
       <div className="search-left">
@@ -11,7 +11,10 @@ const SearchBar = () => {
       <p> Instagram </p>
       </div>
       <div className="search-mid">
-        <input placeholder="&#128269; Search" />
+        <input 
+        value={props.search}
+        onChange={props.searchChangeHandler}  
+        placeholder="&#128269; Search" />
       </div>
       <div className="search-right">
         <i class="far fa-compass fa-lg" />
