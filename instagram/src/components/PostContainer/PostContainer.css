@@ -1,26 +1,31 @@
 
-.post {
+.post-card {
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
-    margin-bottom: 100px;
-    
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 100px;
+
 }
 
 .top-post {
     display:flex;
     align-items: center;
     padding: 13px;
+   
 }
 
 .imgUrl {
     border-radius: 100%;
     width: 40px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .bold {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .mid-img {
@@ -36,7 +41,7 @@
 
 i {
     padding-left: 15px;
-    
+    cursor: pointer;
 }
 
 .red {
@@ -45,6 +50,7 @@ i {
 
 .likes {
     padding-left: 15px;
+    cursor: pointer;
     
 }
 

@@ -35,7 +35,7 @@ class PostContainer extends Component {
   render() {
     let red = this.state.updated ? 'red' : null;
     return (
-      <div className="post">
+      <div className="post-card">
         <div className="top-post">
           <img
             className="imgUrl"
@@ -47,7 +47,7 @@ class PostContainer extends Component {
         <img className="mid-img" src={this.state.data.imageUrl} alt="img2" />
 
         <div className="like-comment-symbols">
-          <p className={`${red}`} onClick={this.addLikes}>
+          <p className={`${red}`} onClick={this.toggleLikes}>
             <i class="far fa-heart fa-lg" />
           </p>
           <p>

@@ -12,7 +12,6 @@ class App extends Component {
     super();
     this.state = {
       dummyData: [],
-      searchData: [],
       search: ''
 
     }
@@ -23,7 +22,7 @@ class App extends Component {
   }
 
   searchChangeHandler = (event) => {
-    this.setState({ search: event.target.value.substr(0,20) })
+    this.setState({ search: event.target.value.substr(0,26) })
   }
 
  
@@ -36,11 +35,10 @@ class App extends Component {
     })
     return (
       <div className="App">
-        <div className= "container">
-        <SearchBar
+            <SearchBar
          search={this.state.search}
          searchChangeHandler={this.searchChangeHandler} />
-
+  
           {filteredContacts.map(data => {
             return <PostContainer 
             data={data} 
@@ -48,7 +46,6 @@ class App extends Component {
              />
 
           })}
-       </div>
       </div>
     );
   }

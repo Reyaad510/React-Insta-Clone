@@ -3,54 +3,75 @@
 .search-bar {
     display: flex;
     align-items: center;
-   
-   
-
+    position: fixed;
+    background-color: whitesmoke;
+    width: 100%;
+    top: 0;
 }
 
 .search-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8%;
+}
 
-    border-right: 1px solid lightgray;
-    flex: 1 1 3%;
+
+.icon {
+    display: flex;
+    justify-content: flex-end;
+    flex:1;
+    padding-right: 10px;
     cursor: pointer;
-    
 }
 
 .instagram {
-    flex: 1 1 25%;
-    font-size: 16px;
-    
     padding-left: 10px;
-    
+    flex: 1;
+    cursor: pointer;
+  
 }
 
 .instagram p {
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Cookie', cursive;
 }
 
 
 .search-mid {
-    flex: 1 1 25%;
-   
+    display: flex;
+    justify-content: center;
+    margin-left: 7%;
+    flex: 1 1 100%;
 }
 
 .search-mid input {
     font-size: 16px;
     outline: none;
-    width: 100%;
+    width: 80%;
 }
 
 .search-mid ::placeholder {
-    padding-left: 27%;
     color: gray;
+    text-align: center;
 }
 
 .search-right {
     display:flex;
-    justify-content: flex-end;
-    flex: 1 1 25%;
-   
-   
+    justify-content: center;
+    flex: 1 1 60%;
     
 }
+
+
+
+@media (max-width: 500px) {
+    .search-left {
+        margin-left: 0%;
+    }
+
+    .search-mid input {
+        width: 100%;
+    }
+}
+
