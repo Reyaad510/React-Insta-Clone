@@ -1,51 +1,37 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import dummyData from './dummy-data';
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
-
-
+import dummyData from "./dummy-data";
+import SearchBar from "./components/SearchBar/SearchBar";
+import PostContainer from "./components/PostContainer/PostContainer";
+import PostPage from "./components/PostContainer/PostPage";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       dummyData: [],
-      search: ''
-
-    }
+      search: ""
+    };
   }
 
   componentDidMount() {
-    this.setState({ dummyData: dummyData })
+    this.setState({ dummyData: dummyData });
   }
 
-  searchChangeHandler = (event) => {
-    this.setState({ search: event.target.value.substr(0,26) })
-  }
-
- 
-
- 
+  searchChangeHandler = event => {
+    this.setState({ search: event.target.value.substr(0, 26) });
+  };
 
   render() {
-    let filteredContacts = this.state.dummyData.filter(data => {
-      return data.username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
-    })
     return (
       <div className="App">
-            <SearchBar
-         search={this.state.search}
-         searchChangeHandler={this.searchChangeHandler} />
-  
-          {filteredContacts.map(data => {
-            return <PostContainer 
-            data={data} 
-            key={data.username}
-             />
+        <SearchBar
+          search={this.state.search}
+          searchChangeHandler={this.searchChangeHandler}
+        />
 
-          })}
+        <PostPage data={this.state.dummyData} search={this.state.search} />
       </div>
     );
   }

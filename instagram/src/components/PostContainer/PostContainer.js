@@ -12,9 +12,8 @@ class PostContainer extends Component {
     };
   }
 
-
   toggleLikes = () => {
-    if(!this.state.updated) {
+    if (!this.state.updated) {
       this.setState(prevState => {
         return {
           likes: prevState.likes + 1,
@@ -26,14 +25,13 @@ class PostContainer extends Component {
         return {
           likes: prevState.likes - 1,
           updated: false
-        }
-      })
+        };
+      });
     }
-  }
-
+  };
 
   render() {
-    let red = this.state.updated ? 'red' : null;
+    let red = this.state.updated ? "red" : null;
     return (
       <div className="post-card">
         <div className="top-post">
