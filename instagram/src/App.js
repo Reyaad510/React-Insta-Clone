@@ -3,8 +3,10 @@ import "./App.css";
 
 import dummyData from "./dummy-data";
 import SearchBar from "./components/SearchBar/SearchBar";
-import PostContainer from "./components/PostContainer/PostContainer";
 import PostPage from "./components/PostContainer/PostPage";
+import withAuthenticate from './components/Authentication/withAuthenticate';
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostPage);
 
 class App extends Component {
   constructor() {
@@ -31,7 +33,7 @@ class App extends Component {
           searchChangeHandler={this.searchChangeHandler}
         />
 
-        <PostPage data={this.state.dummyData} search={this.state.search} />
+        <ComponentFromWithAuthenticate data={this.state.dummyData} search={this.state.search} />
       </div>
     );
   }
