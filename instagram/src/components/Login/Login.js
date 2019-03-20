@@ -14,6 +14,11 @@ class Login extends React.Component {
       this.setState({ [event.target.name]: event.target.value })
   }
 
+  login = () => {
+      localStorage.setItem('username', this.state.username)
+     
+  }
+
 
 
   render() {
@@ -32,7 +37,7 @@ class Login extends React.Component {
         className='login-input'
         onChange={this.inputChangeHandler} />
         
-        <button type="submit">Login</button>
+        <button onClick={this.login}>Login</button>
       </form>
     );
   }

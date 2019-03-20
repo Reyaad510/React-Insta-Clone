@@ -4,6 +4,9 @@ const withAuthenticate = ComponentOne => {
   return class extends Component {
     constructor(props) {
       super(props);
+      this.state = {
+          loggedIn: false
+      }
     }
 
     render() {
