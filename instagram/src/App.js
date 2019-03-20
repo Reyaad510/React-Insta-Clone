@@ -31,12 +31,16 @@ class App extends Component {
     // console.log(typeof(localStorage.getItem('username')) === 'string')
     return (
       <div className="App">
-        <SearchBar
+        {/* <SearchBar
           search={this.state.search}
           searchChangeHandler={this.searchChangeHandler}
-        />
+        /> */}
 
-        <ComponentFromWithAuthenticate data={this.state.dummyData} search={this.state.search} />
+        <ComponentFromWithAuthenticate
+         data={this.state.dummyData}
+         search={this.state.search}
+         searchChangeHandler={this.searchChangeHandler} 
+          />
        
       </div>
     );

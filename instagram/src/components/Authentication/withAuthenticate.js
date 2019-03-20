@@ -25,7 +25,7 @@ const withAuthenticate = PostPage => LoginPage => {
     render() {
       return (
         <div>
-          {this.state.loggedIn === true ? <PostPage data={this.props.data} search={this.props.search} /> : <LoginPage /> }
+          {this.state.loggedIn === true ? <PostPage data={this.props.data} search={this.props.search} searchChangeHandler={this.searchChangeHandler} /> : <LoginPage /> }
         </div>
       );
     }
