@@ -10,6 +10,7 @@
     background-color: #fff;
     padding: 1rem;
     flex-flow: column;
+    
   }
 
   form p {
@@ -64,6 +65,10 @@
     overflow: hidden;
     outline: none;
     cursor: pointer;
+  }
+
+  button:hover {
+    filter: brightness(110%);
   }
   
 

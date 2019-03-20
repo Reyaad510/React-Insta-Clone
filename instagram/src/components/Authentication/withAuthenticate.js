@@ -12,7 +12,9 @@ const withAuthenticate = PostPage => LoginPage => {
 
     componentDidMount() {
      let username = localStorage.getItem('username');
-     if(typeof(username) === 'string') {
+     let password = localStorage.getItem('password');
+
+     if(typeof(username) === 'string' && username !== '' && typeof(password) === 'string' && password !== '') {
        return this.setState(prevState => {
            return {
                loggedIn: !prevState.loggedIn
@@ -24,7 +26,7 @@ const withAuthenticate = PostPage => LoginPage => {
     }
 
     logOut = () => {
-      localStorage.removeItem('username');
+      localStorage.clear();
       window.location.reload();
     }
 
