@@ -18,6 +18,9 @@ const PostPage = props => {
       {filteredContacts.map(data => {
         return <PostContainer data={data} key={data.username} />;
       })}
+        <div className='logout'>
+          <button onClick={props.logOut}> LogOut </button>
+          </div>
     </div>
   );
 };

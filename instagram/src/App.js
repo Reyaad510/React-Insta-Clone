@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 
 import dummyData from "./dummy-data";
-import SearchBar from "./components/SearchBar/SearchBar";
 import PostPage from "./components/PostContainer/PostPage";
 import withAuthenticate from './components/Authentication/withAuthenticate';
 import Login from './components/Login/Login';
@@ -28,13 +27,9 @@ class App extends Component {
   };
 
   render() {
-    // console.log(typeof(localStorage.getItem('username')) === 'string')
+   
     return (
       <div className="App">
-        {/* <SearchBar
-          search={this.state.search}
-          searchChangeHandler={this.searchChangeHandler}
-        /> */}
 
         <ComponentFromWithAuthenticate
          data={this.state.dummyData}

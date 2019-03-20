@@ -1,4 +1,5 @@
 import React, { Component} from "react";
+import './authen.css';
 
 const withAuthenticate = PostPage => LoginPage => {
   return class extends Component {
@@ -22,10 +23,15 @@ const withAuthenticate = PostPage => LoginPage => {
      }
     }
 
+    logOut = () => {
+      localStorage.removeItem('username');
+      window.location.reload();
+    }
+
     render() {
       return (
         <div>
-          {this.state.loggedIn === true ? <PostPage data={this.props.data} search={this.props.search} searchChangeHandler={this.searchChangeHandler} /> : <LoginPage /> }
+          {this.state.loggedIn === true ? <PostPage logOut={this.logOut} data={this.props.data} search={this.props.search} searchChangeHandler={this.props.searchChangeHandler} /> : <LoginPage /> }
         </div>
       );
     }
