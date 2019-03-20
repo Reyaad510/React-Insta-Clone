@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 
-const withAuthenticate = ComponentOne => {
+const withAuthenticate = PostPage => LoginPage => {
   return class extends Component {
     constructor(props) {
       super(props);
@@ -9,10 +9,23 @@ const withAuthenticate = ComponentOne => {
       }
     }
 
+    componentDidMount() {
+     let username = localStorage.getItem('username');
+     if(typeof(username) === 'string') {
+       return this.setState(prevState => {
+           return {
+               loggedIn: !prevState.loggedIn
+           }
+       })
+     } else {
+         return;
+     }
+    }
+
     render() {
       return (
         <div>
-          <ComponentOne data={this.props.data} search={this.props.search} />
+          {this.state.loggedIn === true ? <PostPage data={this.props.data} search={this.props.search} /> : <LoginPage /> }
         </div>
       );
     }

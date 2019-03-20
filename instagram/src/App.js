@@ -7,7 +7,7 @@ import PostPage from "./components/PostContainer/PostPage";
 import withAuthenticate from './components/Authentication/withAuthenticate';
 import Login from './components/Login/Login';
 
-const ComponentFromWithAuthenticate = withAuthenticate(PostPage);
+const ComponentFromWithAuthenticate = withAuthenticate(PostPage)(Login);
 
 class App extends Component {
   constructor() {
@@ -20,6 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({ dummyData: dummyData });
+    
   }
 
   searchChangeHandler = event => {
@@ -27,6 +28,7 @@ class App extends Component {
   };
 
   render() {
+    // console.log(typeof(localStorage.getItem('username')) === 'string')
     return (
       <div className="App">
         <SearchBar
@@ -35,7 +37,7 @@ class App extends Component {
         />
 
         <ComponentFromWithAuthenticate data={this.state.dummyData} search={this.state.search} />
-        <Login />
+       
       </div>
     );
   }

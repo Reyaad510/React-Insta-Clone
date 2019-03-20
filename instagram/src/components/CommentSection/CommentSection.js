@@ -22,7 +22,7 @@ class CommentSection extends Component {
               comments: [...prevState.comments,
               {
                  text: prevState.text,
-                 username: 'Reyaad_Rafeek' 
+                 username: localStorage.getItem('username')
               }],
               text: ''
           }
