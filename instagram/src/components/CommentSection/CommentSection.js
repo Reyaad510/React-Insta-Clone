@@ -1,6 +1,25 @@
 import React, { Component } from "react";
 import Comment from "../Comment.js/Comment";
-import "./CommentSection.css";
+import './CommentSection.css'
+import styled, { css } from 'styled-components';
+
+
+
+const Input = styled.input`
+ 
+    width: 99%;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    outline: none;
+    border-top: 1px solid lightgray;
+  
+`;
+
+
+
+
 
 class CommentSection extends Component {
   constructor(props) {
@@ -15,7 +34,7 @@ class CommentSection extends Component {
       this.setState({ text: event.target.value })
   }
 
-  addNewComment = (event,index) => {
+  addNewComment = (event) => {
       event.preventDefault();
       this.setState(prevState => {
           return {
@@ -37,12 +56,12 @@ class CommentSection extends Component {
         {this.state.comments.map(comment => {
           return <Comment comment={comment} key={comment.text} />;
         })}
-        <form onSubmit={this.addNewComment} className="comment-input-box">
-          <input 
+        <form onSubmit={this.addNewComment}>
+          <Input 
           className="comment-input" 
           placeholder="Add Comment..."
           value={this.state.text}
-          onChange={this.changeHandler}  />
+          onChange={this.changeHandler}/>
         </form>
       </div>
     );

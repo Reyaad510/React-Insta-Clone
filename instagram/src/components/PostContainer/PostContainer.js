@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./PostContainer.css";
 import CommentSection from "../CommentSection/CommentSection";
-import styled, { css } from 'styled-components';
-
+import styled, { css } from "styled-components";
 
 // Styled Components
 
@@ -15,16 +14,15 @@ const PostCard = styled.div`
   margin-top: 80px;
   margin-bottom: 10px;
 
-  @media(max-width: 650px) {
+  @media (max-width: 650px) {
     margin-top: 60px;
   }
 `;
 
 const TopPost = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
   padding: 13px;
-
 
   img {
     border-radius: 100%;
@@ -57,12 +55,6 @@ const Likes = styled.div`
     cursor: pointer;
   }
 `;
-
-
-
-
-
-
 
 class PostContainer extends Component {
   constructor(props) {
@@ -97,14 +89,11 @@ class PostContainer extends Component {
     return (
       <PostCard>
         <TopPost>
-          <img
-            src={this.state.data.thumbnailUrl}
-            alt="img1"
-          />
+          <img src={this.state.data.thumbnailUrl} alt="img1" />
           <p>{this.state.data.username}</p>
         </TopPost>
 
-        <MidImg src={this.state.data.imageUrl} alt="img2"></MidImg>
+        <MidImg src={this.state.data.imageUrl} alt="img2" />
 
         <LikeAndComment>
           <p className={`${red}`} onClick={this.toggleLikes}>

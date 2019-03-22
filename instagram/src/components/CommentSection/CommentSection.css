@@ -1,17 +1,5 @@
 
-.comment-input-box {
+form {
     width: 97%;
     padding-left: 15px;
-  
 }
-
-.comment-input {
-    width: 99%;
-    border: none;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: 16px;
-    outline: none;
-    border-top: 1px solid lightgray;
-}
-
