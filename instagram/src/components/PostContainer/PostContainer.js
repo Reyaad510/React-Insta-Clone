@@ -1,6 +1,68 @@
 import React, { Component } from "react";
 import "./PostContainer.css";
 import CommentSection from "../CommentSection/CommentSection";
+import styled, { css } from 'styled-components';
+
+
+// Styled Components
+
+const PostCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 10px;
+
+  @media(max-width: 650px) {
+    margin-top: 60px;
+  }
+`;
+
+const TopPost = styled.div`
+  display:flex;
+  align-items: center;
+  padding: 13px;
+
+
+  img {
+    border-radius: 100%;
+    width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  p {
+    font-weight: bold;
+    cursor: pointer;
+  }
+`;
+
+const MidImg = styled.img`
+  width: 100%;
+`;
+
+const LikeAndComment = styled.div`
+  display: flex;
+  height: 28px;
+`;
+
+const Likes = styled.div`
+  padding-left: 15px;
+  cursor: pointer;
+
+  p {
+    font-weight: bold;
+    cursor: pointer;
+  }
+`;
+
+
+
+
+
+
 
 class PostContainer extends Component {
   constructor(props) {
@@ -33,33 +95,34 @@ class PostContainer extends Component {
   render() {
     let red = this.state.updated ? "red" : null;
     return (
-      <div className="post-card">
-        <div className="top-post">
+      <PostCard>
+        <TopPost>
           <img
-            className="imgUrl"
             src={this.state.data.thumbnailUrl}
             alt="img1"
           />
-          <p className="bold">{this.state.data.username}</p>
-        </div>
-        <img className="mid-img" src={this.state.data.imageUrl} alt="img2" />
+          <p>{this.state.data.username}</p>
+        </TopPost>
 
-        <div className="like-comment-symbols">
+        <MidImg src={this.state.data.imageUrl} alt="img2"></MidImg>
+
+        <LikeAndComment>
           <p className={`${red}`} onClick={this.toggleLikes}>
             <i class="far fa-heart fa-lg" />
           </p>
           <p>
             <i class="far fa-comment fa-lg" />
           </p>
-        </div>
-        <div className="likes">
-          <p className="bold">{this.state.likes} likes</p>
-        </div>
+        </LikeAndComment>
+
+        <Likes>
+          <p>{this.state.likes} likes</p>
+        </Likes>
 
         <div>
           <CommentSection comments={this.state.data.comments} />
         </div>
-      </div>
+      </PostCard>
     );
   }
 }

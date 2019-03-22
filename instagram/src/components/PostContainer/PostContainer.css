@@ -1,45 +1,4 @@
 
-.post-card {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid gray;
-    max-width: 700px;
-    margin: 0 auto;
-    margin-top: 95px;
-    margin-bottom: 10px;
-
-}
-
-.top-post {
-    display:flex;
-    align-items: center;
-    padding: 13px;
-   
-}
-
-.imgUrl {
-    border-radius: 100%;
-    width: 40px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.bold {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.mid-img {
-    width: 100%;
-}
-
-.like-comment-symbols {
-    display: flex;
-    height: 28px;
-  
-    
-}
-
 i {
     padding-left: 15px;
     cursor: pointer;
@@ -49,11 +8,7 @@ i {
     color: red;
 }
 
-.likes {
-    padding-left: 15px;
-    cursor: pointer;
-    
-}
+
 
 
 

@@ -1,5 +1,4 @@
 import React from "react";
-import './SearchBar.css';
 import styled, { css } from 'styled-components';
 
 // Styled Components
