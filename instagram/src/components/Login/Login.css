@@ -1,0 +1,23 @@
+
+
+ .login {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 200px;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    flex-flow: column;
+    
+  }
+
+  form p {
+    font-family: 'Cookie', cursive;
+    font-size: 80px;
+    line-height: 0;
+    
+  }
+
+
